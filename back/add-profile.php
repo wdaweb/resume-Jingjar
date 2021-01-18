@@ -20,6 +20,7 @@
         <button onclick="javascript:location.href='connect.php'">問卷檢視</button>
         <button onclick="javascript:location.href='find.php'">工作條件管理</button>
         <button onclick="javascript:location.href='experience.php'">經驗管理</button>
+        <button onclick="logout()">登出</button>
     </div>
 </div>
 <script src="../jquery-1.9.1.min.js"></script>
@@ -45,3 +46,10 @@
     
     </div>
 </form>
+<script>
+function logout(){
+    $.get("../api/logout.php",function(){
+        location.href='../index.php';
+    })
+}
+</script>

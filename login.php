@@ -34,6 +34,7 @@ function login(){
                 if(r==1){
                     if(acc=='a'){
                         location.href="backend.php";
+                        $_SESSION['acc']=1;
                     }else{
                        location.href="index.php";
                     }

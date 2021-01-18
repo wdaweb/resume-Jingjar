@@ -19,6 +19,7 @@
         <button onclick="javascript:location.href='about.php'">關於我管理</button>
         <button onclick="javascript:location.href='find.php'">工作條件檢視</button>
         <button onclick="javascript:location.href='experience.php'">經驗管理</button>
+        <button onclick="logout()">登出</button>
     </div>
 </div>
 <?php
@@ -58,3 +59,10 @@ $connect = $Connect->all();
     }
     ?>
 </table>
+<script>
+function logout(){
+    $.get("../api/logout.php",function(){
+        location.href='../index.php';
+    })
+}
+</script>

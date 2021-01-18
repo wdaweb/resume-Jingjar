@@ -58,7 +58,16 @@ include_once "base.php";
           <li class="nav-item">
             <a class="nav-link" href="login.php">login</a>
           </li>
-
+          <?php
+          if (!empty($_SESSION['login'])) {
+          ?>
+            <li class="nav-item">
+              <a class="nav-link" href="backend.php">manage</a>
+            </li>
+            
+          <?php
+          }
+          ?>
         </ul>
       </div>
     </nav>
@@ -176,9 +185,9 @@ include_once "base.php";
         foreach ($experience as $exp) {
         ?><a class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1"><?=$exp['title']?></h5>
+              <h5 class="mb-1"><?= $exp['title'] ?></h5>
             </div>
-            <p class="mb-1"><?=$exp['name']?>
+            <p class="mb-1"><?= $exp['name'] ?>
             </p>
           </a>
         <?php
@@ -357,6 +366,8 @@ include_once "base.php";
       /* ..... */
       $('#nav-tabContent div:first-child').addClass('show').addClass('active')
       $('#list-tab a:first-child').addClass('active')
+      /* .... */
+      
     })();
   </script>
 

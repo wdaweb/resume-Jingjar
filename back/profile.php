@@ -47,6 +47,7 @@ include_once "../base.php";
         <button onclick="javascript:location.href='about.php'">關於我管理</button>
         <button onclick="javascript:location.href='connect.php'">問卷檢視</button>
         <button onclick="javascript:location.href='experience.php'">經驗管理</button>
+        <button onclick="logout()">登出</button>
     </div>
 </div><div>
     <button onclick="javascript:location.href='add-profile.php'">新增作品</button>
@@ -125,4 +126,10 @@ include_once "../base.php";
             location.reload()
         })
     }
+    
+    function logout(){
+    $.get("../api/logout.php",function(){
+        location.href='../index.php';
+    })
+}
 </script>
