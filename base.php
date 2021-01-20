@@ -10,6 +10,7 @@ $About=new DB('about');
 $Connect=new DB('connect');
 $Find=new DB('find');
 $Experience=new DB('experience');
+$Basic=new DB('basic');
 
 
 class DB{

@@ -18,8 +18,8 @@
         <button onclick="javascript:location.href='profile.php'">作品管理</button>
         <button onclick="javascript:location.href='about.php'">關於我管理</button>
         <button onclick="javascript:location.href='connect.php'">問卷檢視</button>
+        <button onclick="javascript:location.href='find.php'">工作條件管理</button>
         <button onclick="javascript:location.href='experience.php'">經驗管理</button>
-        <button onclick="javascript:location.href='basic.php'">簡介管理</button>
         <button onclick="javascript:location.href='../index.php'">首頁</button>
         <button onclick="logout()">登出</button>
     </div>
@@ -28,42 +28,27 @@
 <?php
 include_once "../base.php";
 ?>
-<h3 class="ct" style="margin:0">工作條件</h3>
+<h3 class="ct" style="margin:0">簡介</h3>
 <div style="width:100% ;display:flex;align-items:around;">
-    <div style="width:25%;margin:0 1px;background:#999">條件標題</div>
-    <div style="width:25%;margin:0 1px;background:#999">條件內容</div>
-    <div style="width:25%;margin:0 1px;background:#999">排序</div>
-    <div style="width:25%;margin:0 1px;background:#999">操作</div>
-    
+    <div style="width:33%;margin:0 1px;background:#999">標題</div>
+    <div style="width:33%;margin:0 1px;background:#999">內容</div>
+    <div style="width:33%;margin:0 1px;background:#999">操作</div>
 </div>
-<form action="../api/edit_find.php" method='post'>
+<form action="../api/edit_basic.php" method='post'>
     <div style="width:100%;height:200px;overflow-y:scroll;color:black">
     <?php
-        $find = $Find->all(" order by rank");
-        foreach ($find as $key => $p) {
+        $basic = $Basic->all();
+        foreach ($basic as $key => $p) {
         ?>
             <div style="width:100% ;display:flex ;align-items:around;background:white;margin:1px 0" class='ct'>
-                <div style="width: 26%;">
+                <div style="width: 35%;">
                    <input type="text" name="title[]" value="<?= $p['title'] ?>">
                 </div>
-                <div style="width: 26%;display:inline-block;">
+                <div style="width: 33%;display:inline-block;">
                     <textarea name="name[]" ><?= $p['name'] ?></textarea>
                 </div>
-                <div style="width: 26%;">
-                    <?php
-                    if ($key != 0) {
-                    ?>
-                        <input type="button" value="往上" onclick="sw(<?= $p['id'] ?>,<?= $find[$key - 1]['id'] ?>)">
-                    <?php
-                    }
-                    if ($key != (sizeof($find) - 1)) {
-                    ?>
-                        <input type="button" value="往下" onclick="sw(<?= $p['id'] ?>,<?= $find[$key + 1]['id'] ?>)">
-                    <?php
-                    }
-                    ?>
-                </div>
-                <div style="width: 22%;">
+                
+                <div style="width: 33%;">
                     <input type="checkbox" name="sh[]" value="<?= $p['id'] ?>" <?= ($p['sh'] == 1) ? "checked" : "" ?>>顯示
                     <input type="checkbox" name="del[]" value="<?= $p['id'] ?>">刪除
                 </div>
@@ -81,8 +66,8 @@ include_once "../base.php";
 
 
 <hr>
-<h3>新增求職條件</h3>
-<form action="../api/add_find.php" method="post" >
+<h3>新增簡介</h3>
+<form action="../api/add_basic.php" method="post" >
     <table>
         <tr>
             <td>新增標題</td>
@@ -94,11 +79,7 @@ include_once "../base.php";
     <input type="submit" value="新增">
 </form>
 <script>
-    function sw(idx,idy){
-    $.post('../api/sw.php',{table:'find',idx,idy},function(){       
-        location.reload()
-    })
-}
+    
 
 function logout(){
     $.get("../api/logout.php",function(){

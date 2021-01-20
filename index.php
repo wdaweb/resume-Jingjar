@@ -16,7 +16,8 @@ include_once "base.php";
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-  <title>Hello, world!</title>
+  <link rel="shortcut icon" href="imge/agyop-qczih-001.ico" type="image/x-icon" />
+  <title>Resume</title>
 </head>
 
 <body data-spy="scroll" data-target="#navspy" data-offset="100">
@@ -55,16 +56,22 @@ include_once "base.php";
           <li class="nav-item">
             <a class="nav-link" href="#f1">connect me</a>
           </li>
+          <?php
+          if (empty($_SESSION['login'])) {
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="login.php">login</a>
           </li>
+          <?php
+          }
+          ?>
           <?php
           if (!empty($_SESSION['login'])) {
           ?>
             <li class="nav-item">
               <a class="nav-link" href="backend.php">manage</a>
             </li>
-            
+
           <?php
           }
           ?>
@@ -77,12 +84,33 @@ include_once "base.php";
       <div class="jumbotron jumbotron-fluid pcolor" id="a1" style="padding: 30px 0;">
         <div class="container">
           <div class="row ">
-            <div class="col-12 text-center p-3">
-              <img src="https://picsum.photos/150/150/?random=1" style="border-radius:50%;box-shadow: 0px 0px 5px #fff;" class="img-fluid">
+            <div class="d-none d-md-block col-6 text-right p-3">
+              <img src="imge/selfile.jpg" style="border-radius:50%;box-shadow: 0px 0px 5px #fff;width:150px;height:150px" class="img-fluid">
             </div>
-            <div class="col-12 text-center p-2 wow rollIn" style="color: rgb(30,119,166);font-size: 23px; margin-top: -15px;">
-              曾俊澄
+            <div class="col-12 col-md-6 text-md-left text-center wow rollIn" style="color: rgb(30,119,166);font-size: 23px;">
+              <?php
+              $basic = $Basic->all(['sh' => 1]);
+              foreach ($basic as $b) {
+              ?>
+                <div class="row pt-3">
+                  <div class="col-12" style="word-wrap: break-word;"><?= $b['title'] ?>:<?= $b['name'] ?></div>
+                </div>
+              <?php
+              }
+              ?>
+              <div class="row pt-3">
+                  <div class="col-12" style="word-wrap: break-word;">
+                  <a href="" style="color: rgb(30,119,166);"><i class="fab fa-github"></i></a><em style="font-size: 33px;">曾俊澄</em><a href="" style="color: rgb(30,119,166);"><i class="fab fa-facebook"></i></a>
+                  </div>
+                </div>
+
+              <!-- <div class="row pt-3">
+                <div class="col-12" style="word-wrap: break-word;">email:a097908592@gmail.com</div>
+              </div> -->
             </div>
+            <!-- <div class="col-12 text-center p-2 wow rollIn" style="color: rgb(30,119,166);font-size: 33px; margin-top: -15px;">
+              <a href="" style="color: rgb(30,119,166);"><i class="fab fa-github"></i></a>曾俊澄<a href="" style="color: rgb(30,119,166);"><i class="fab fa-facebook"></i></a>
+            </div> -->
             <div class="col-12 text-center">
               <img src="imge/intro.gif" class="img-fluid ">
             </div>
@@ -109,7 +137,7 @@ include_once "base.php";
 
         ?>
           <div class="col-12 col-md-4"><img src="imge/<?= $ab['img'] ?>" class="img-fluid" style="width:400px"></div>
-          <div class="col-12 col-md-8 pcolor"><?= $ab['name'] ?></div>
+          <div class="col-12 col-md-8 pcolor" style="padding:40px 40px 40px 40px;font-size:25px;line-height:40px;word-break: break-all;"><?= $ab['name'] ?></div>
         <?php
         }
         ?>
@@ -171,7 +199,7 @@ include_once "base.php";
             $experience = $Experience->all(['sh' => 1]);
             foreach ($experience as $key => $exp) {
             ?>
-              <div class="tab-pane fade  fsize" id="p<?= $key ?>" role="tabpanel"><?= $exp['name'] ?> </div>
+              <div class="tab-pane fade  fsize" style="font-size: 40px;"id="p<?= $key ?>" role="tabpanel"><?= $exp['name'] ?> </div>
             <?php
             }
             ?>
@@ -367,7 +395,7 @@ include_once "base.php";
       $('#nav-tabContent div:first-child').addClass('show').addClass('active')
       $('#list-tab a:first-child').addClass('active')
       /* .... */
-      
+
     })();
   </script>
 

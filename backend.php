@@ -23,6 +23,7 @@ include_once "base.php";
         <button onclick="javascript:location.href='./back/connect.php'">問卷檢視</button>
         <button onclick="javascript:location.href='./back/experience.php'">經驗管理</button>
         <button onclick="javascript:location.href='./back/find.php'">工作條件管理</button>
+        <button onclick="javascript:location.href='./back/basic.php'">簡介管理</button>
         <button onclick="javascript:location.href='index.php'">首頁</button>
         <button onclick="logout()">登出</button>
     </div>

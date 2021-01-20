@@ -1,7 +1,7 @@
 # 個人履歷表管理系統
 
 ### CakeResume:
-  * URL:https://www.cakeresume.com/resumes/
+  * URL:https://www.cakeresume.com/a0979085925
 ### 專屬線上空間
   * URL:http://220.128.133.15/
 
