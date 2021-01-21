@@ -157,8 +157,8 @@ include_once "base.php";
           $profile = $Profile->all(["sh" => 1], " order by rank");
           foreach ($profile as $key => $pro) {
           ?>
-            <div style="max-width: 500px;max-height: 400px;" class="col-12 col-md-6 text-center wow hinge">
-              <div class="pro mb-4">
+            <div style="max-width: 500px;max-height: 400px;" class="col-12 col-md-6 text-center wow hinge ">
+              <div class="pro mb-4 ">
                 <div class="spro"><a href="<?= $pro['href'] ?>"><?= $pro['name'] ?></a>
                   <p><?= $pro['intro'] ?></p>
                 </div>
