@@ -100,7 +100,7 @@ include_once "base.php";
               ?>
               <div class="row pt-3">
                   <div class="col-12" style="word-wrap: break-word;">
-                  <a href="" style="color: rgb(30,119,166);"><i class="fab fa-github"></i></a><em style="font-size: 33px;">曾俊澄</em><a href="" style="color: rgb(30,119,166);"><i class="fab fa-facebook"></i></a>
+                  <a href="https://github.com/Jingjar" style="color: rgb(30,119,166);" target="_blank"><i class="fab fa-github"></i></a><em style="font-size: 33px;">曾俊澄</em><a href="https://www.facebook.com/juncheng.ceng" style="color: rgb(30,119,166);" target="_blank"><i class="fab fa-facebook"></i></a>
                   </div>
                 </div>
 
@@ -159,7 +159,7 @@ include_once "base.php";
           ?>
             <div style="max-width: 500px;max-height: 400px;" class="col-12 col-md-6 text-center wow hinge ">
               <div class="pro mb-4 ">
-                <div class="spro"><a href="<?= $pro['href'] ?>"><?= $pro['name'] ?></a>
+                <div class="spro"><a href="<?= $pro['href'] ?>" target="_blank"><?= $pro['name'] ?></a>
                   <p><?= $pro['intro'] ?></p>
                 </div>
                 <img src="imge/<?= $pro['img'] ?>" class="img-fluid " alt="" srcset="" style="width:500px;height:400px">
