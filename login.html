@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/css.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="shortcut icon" href="imge/agyop-qczih-001.ico" type="image/x-icon" />
+</head>
+<body>
+    <form novalidate class="a" action="api/add_connect.php" method="post">
+        <div class="container">
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="inputEmail4">帳號</label>
+              <input type="text" class="form-control form-control-lg" name="phone" id="inputEmail4" placeholder="請輸入帳號" required>
+              <div class="invalid-feedback">
+                Don't empty.
+              </div>
+            </div>
+            <div class="form-group col-12">
+              <label for="inputPassword4">密碼</label>
+              <input type="text" class="form-control form-control-lg" name="name" id="inputPassword4" placeholder="請輸密碼" required>
+              <div class="invalid-feedback">
+                Don't empty.
+              </div>
+            </div>
+          </div>
+         
+          <div class="row justify-content-center">
+            <button type="submit" class="btn btn-info mb-3 scolor">Send</button>
+          </div>
+        </div>
+      </form>
+</body>
+</html>
